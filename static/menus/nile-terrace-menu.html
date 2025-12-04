@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nile Terrace - Menu | Ramses Hilton Hotel</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #0d3b2e 0%, #1a5a4c 100%);
+            color: #e8d5b7;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .menu-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(13, 59, 46, 0.95);
+            border: 2px solid #e8d5b7;
+            border-radius: 8px;
+            padding: 3rem;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 1px solid #e8d5b7;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            color: #e8d5b7;
+            margin-bottom: 0.5rem;
+        }
+        .header p {
+            color: #8ba;
+            font-style: italic;
+        }
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        .section h2 {
+            color: #e8d5b7;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #2a6a5c;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dotted #2a6a5c;
+        }
+        .item-name {
+            color: #fff;
+            font-weight: bold;
+        }
+        .item-desc {
+            color: #8ba;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+        .item-price {
+            color: #e8d5b7;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e8d5b7;
+            color: #8ba;
+            font-size: 0.85rem;
+        }
+        .currency { font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <div class="header">
+            <h1>🌿 Nile Terrace</h1>
+            <p>Mediterranean & Middle Eastern Fusion</p>
+            <p style="margin-top: 1rem; color: #5a8a7c;">Ramses Hilton Hotel, Cairo</p>
+        </div>
+
+        <div class="section">
+            <h2>Starters</h2>
+            <div class="item">
+                <div>
+                    <div class="item-name">Mediterranean Bruschetta</div>
+                    <div class="item-desc">Toasted ciabatta with tomatoes, basil, feta, and balsamic glaze</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 195</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Grilled Halloumi Salad</div>
+                    <div class="item-desc">Mixed greens, pomegranate, walnuts, and honey dressing</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 225</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Seafood Soup</div>
+                    <div class="item-desc">Fresh catch of the day in aromatic saffron broth</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 245</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Main Courses</h2>
+            <div class="item">
+                <div>
+                    <div class="item-name">Grilled Sea Bass</div>
+                    <div class="item-desc">With lemon butter sauce, roasted vegetables, and herb rice</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 485</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Lamb Rack</div>
+                    <div class="item-desc">Herb-crusted lamb with mint jus and Mediterranean vegetables</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 545</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Chicken Shawarma Platter</div>
+                    <div class="item-desc">Marinated chicken with garlic sauce, pickles, and fresh bread</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 325</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Vegetarian Moussaka</div>
+                    <div class="item-desc">Layered eggplant, potato, and béchamel with mixed salad</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 285</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Desserts</h2>
+            <div class="item">
+                <div>
+                    <div class="item-name">Baklava Selection</div>
+                    <div class="item-desc">Assorted honey-soaked pastries with pistachios</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 175</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Tiramisu</div>
+                    <div class="item-desc">Classic Italian dessert with espresso and mascarpone</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 165</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>All prices include taxes and service charges</p>
+            <p style="margin-top: 0.5rem;">For reservations: nile.terrace@ramses.hotel</p>
+            <p style="margin-top: 1rem;">🌅 Open Daily: 12:00 PM - 11:00 PM 🌅</p>
+        </div>
+    </div>
+</body>
+</html>

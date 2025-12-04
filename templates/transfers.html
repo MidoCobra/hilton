@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Airport Transfers - Ramses Hilton Hotel{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <h1>Airport Transfers</h1>
+    <p>Convenient transportation options from Cairo International Airport</p>
+</section>
+
+<!-- Airport Transfers Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="text-center">Cairo International Airport Transfers</h2>
+        <p class="text-center">Choose from our range of comfortable transfer options</p>
+        
+        <div class="info-grid">
+            {% for option in transfer_options %}
+            <div class="info-card">
+                <h3>{{ option.icon }} {{ option.name }}</h3>
+                {% if option.vehicle_type %}
+                <p><strong>{{ option.vehicle_type }}</strong></p>
+                {% endif %}
+                {% if option.description %}
+                <p>{{ option.description }}</p>
+                {% endif %}
+                {% if option.max_capacity %}
+                <p>Maximum capacity: {{ option.max_capacity }}</p>
+                {% endif %}
+                {% if option.price_to_hotel or option.price_from_hotel %}
+                <ul>
+                    {% if option.price_to_hotel %}
+                    <li>From the airport to the hotel: <strong>EGP {{ option.price_to_hotel|floatformat:0 }}</strong></li>
+                    {% endif %}
+                    {% if option.price_from_hotel %}
+                    <li>From the hotel to the airport: <strong>EGP {{ option.price_from_hotel|floatformat:0 }}</strong></li>
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+            {% empty %}
+            <!-- Fallback static content if no transfer options in database -->
+            <div class="info-card">
+                <h3>🚗 Sedan</h3>
+                <p><strong>Toyota Camry / Hyundai Sonata or similar</strong></p>
+                <p>Maximum capacity: 2 adults including luggage</p>
+                <ul>
+                    <li>From the airport to the hotel: <strong>EGP 350</strong></li>
+                    <li>From the hotel to the airport: <strong>EGP 300</strong></li>
+                </ul>
+            </div>
+            
+            <div class="info-card">
+                <h3>🚙 Mid-size SUV</h3>
+                <p><strong>Comfortable and spacious for families</strong></p>
+                <p>Maximum capacity: 5 adults including luggage</p>
+                <ul>
+                    <li>From the airport to the hotel: <strong>EGP 450</strong></li>
+                    <li>From the hotel to the airport: <strong>EGP 400</strong></li>
+                </ul>
+            </div>
+            
+            <div class="info-card">
+                <h3>🚐 Van</h3>
+                <p><strong>Perfect for groups and families</strong></p>
+                <p>Maximum capacity: up to 8 adults including luggage</p>
+                <ul>
+                    <li>From the airport to the hotel: <strong>EGP 650</strong></li>
+                    <li>From the hotel to the airport: <strong>EGP 550</strong></li>
+                </ul>
+            </div>
+            
+            <div class="info-card">
+                <h3>🚐 Luxury Van</h3>
+                <p><strong>Premium service for special occasions</strong></p>
+                <p>Maximum capacity: up to 6 adults including luggage</p>
+                <ul>
+                    <li>From the airport to the hotel: <strong>EGP 800</strong></li>
+                    <li>From the hotel to the airport: <strong>EGP 700</strong></li>
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Parking Section -->
+<section class="section section-light">
+    <div class="container">
+        <h2 class="text-center">Parking & Valet Service</h2>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🅿️ Valet Service</h3>
+                <p>Available 24/7 for all in-house guests. Simply hand your keys to our valet team at the entrance.</p>
+                <p><strong>Complimentary for hotel guests</strong></p>
+            </div>
+            
+            <div class="info-card">
+                <h3>🚗 Parking Details</h3>
+                <p>Secure on-site parking is available for guests.</p>
+                <ul>
+                    <li>Self-parking available</li>
+                    <li>Valet parking provided</li>
+                    <li>24/7 security surveillance</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            <p>For transfer bookings or parking inquiries, please contact our Concierge Team:</p>
+            {% if settings %}
+            <p><a href="tel:{{ settings.phone_number|cut:' ' }}" class="btn btn-primary">Call: {{ settings.phone_number }}</a></p>
+            {% else %}
+            <p><a href="tel:+20227950000" class="btn btn-primary">Call: +20 2 2795 0000</a></p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

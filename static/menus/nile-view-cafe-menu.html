@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nile View Café - Menu | Ramses Hilton Hotel</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #2c1810 0%, #4a2c1a 100%);
+            color: #f5e6d3;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .menu-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(44, 24, 16, 0.95);
+            border: 2px solid #c9a86c;
+            border-radius: 8px;
+            padding: 3rem;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 1px solid #c9a86c;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            color: #c9a86c;
+            margin-bottom: 0.5rem;
+        }
+        .header p {
+            color: #a89070;
+            font-style: italic;
+        }
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        .section h2 {
+            color: #c9a86c;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #5a3a2a;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dotted #5a3a2a;
+        }
+        .item-name {
+            color: #fff;
+            font-weight: bold;
+        }
+        .item-desc {
+            color: #a89070;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+        .item-price {
+            color: #c9a86c;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #c9a86c;
+            color: #a89070;
+            font-size: 0.85rem;
+        }
+        .currency { font-size: 0.8rem; }
+        .buffet-note {
+            background: rgba(201, 168, 108, 0.1);
+            border: 1px solid #c9a86c;
+            border-radius: 4px;
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <div class="header">
+            <h1>☕ Nile View Café</h1>
+            <p>International All-Day Dining</p>
+            <p style="margin-top: 1rem; color: #7a5a4a;">Ramses Hilton Hotel, Cairo</p>
+        </div>
+
+        <div class="buffet-note">
+            <strong>🌅 Breakfast Buffet</strong><br>
+            Daily 6:30 AM - 10:30 AM | <span class="currency">EGP</span> 485 per person
+        </div>
+
+        <div class="section">
+            <h2>Breakfast Favorites</h2>
+            <div class="item">
+                <div>
+                    <div class="item-name">Egyptian Breakfast</div>
+                    <div class="item-desc">Ful, falafel, eggs, cheese, fresh bread, and tea</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 195</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">American Breakfast</div>
+                    <div class="item-desc">Eggs any style, bacon, sausage, hash browns, toast</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 225</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Eggs Benedict</div>
+                    <div class="item-desc">Poached eggs, smoked salmon, hollandaise on English muffin</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 245</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>All-Day Menu</h2>
+            <div class="item">
+                <div>
+                    <div class="item-name">Club Sandwich</div>
+                    <div class="item-desc">Triple-decker with chicken, bacon, egg, lettuce, tomato</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 245</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Caesar Salad</div>
+                    <div class="item-desc">Romaine lettuce, parmesan, croutons, grilled chicken</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 225</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Beef Burger</div>
+                    <div class="item-desc">Angus beef patty, cheddar, caramelized onions, truffle fries</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 295</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Pasta Primavera</div>
+                    <div class="item-desc">Fresh vegetables, garlic, olive oil, parmesan</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 265</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Grilled Chicken</div>
+                    <div class="item-desc">With mashed potatoes, seasonal vegetables, mushroom sauce</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 325</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Beverages</h2>
+            <div class="item">
+                <div>
+                    <div class="item-name">Fresh Juices</div>
+                    <div class="item-desc">Orange, mango, guava, mixed fruits</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 85</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Specialty Coffee</div>
+                    <div class="item-desc">Espresso, cappuccino, latte, Americano</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 65</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Egyptian Tea</div>
+                    <div class="item-desc">Traditional black tea with fresh mint</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 45</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>All prices include taxes and service charges</p>
+            <p style="margin-top: 0.5rem;">For reservations: nileview.cafe@ramses.hotel</p>
+            <p style="margin-top: 1rem;">🌄 Open Daily: 6:30 AM - 11:00 PM 🌄</p>
+        </div>
+    </div>
+</body>
+</html>

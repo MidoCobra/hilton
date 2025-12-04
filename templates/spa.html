@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}The Spa - Ramses Hilton Hotel{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <h1>The Spa</h1>
+    <p>In the right hands, wellness is an art</p>
+</section>
+
+<!-- Spa Introduction Section -->
+<section class="section">
+    <div class="container">
+        <div class="spa-content">
+            <h2>Wellness Philosophy</h2>
+            <p>"In the right hands, wellness is an art. That's our spa philosophy. Surrender yourself to the hands of our skilled team for an experience you'll long remember."</p>
+            
+            <div class="spa-location">
+                <h4>📍 Location</h4>
+                <p><strong>Mezzanine Floor, Ramses Hilton Hotel</strong></p>
+            </div>
+            
+            <div class="mt-4">
+                {% if spa_menu_link %}
+                <a href="{{ spa_menu_link.url }}" target="_blank" rel="noopener" class="btn btn-primary">View Spa Menu</a>
+                {% else %}
+                <a href="https://assets.hiltonstatic.com/hilton-asset-cache/image/upload/v1737566860/dx/wp/dxbjbhi-hilton-dubai-jumeirah/pdf/Dec%202024%20Spa_Booklet%2020x20CM%202024%201%201%20FINAL-ua_qgvsxn.pdf" target="_blank" rel="noopener" class="btn btn-primary">View Spa Menu</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="section section-light">
+    <div class="container">
+        <h2 class="text-center">Our Services</h2>
+        <p class="text-center">Rejuvenate your body and mind</p>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>💆 Massage Therapies</h3>
+                <p>From relaxing Swedish massages to therapeutic deep tissue treatments, our skilled therapists will customize your experience.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>✨ Facial Treatments</h3>
+                <p>Rejuvenating facials using premium products to leave your skin glowing and refreshed.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>🛁 Body Treatments</h3>
+                <p>Indulgent body wraps, scrubs, and treatments designed to nourish and revitalize, including traditional Egyptian aromatherapy.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>💅 Nail Services</h3>
+                <p>Manicures and pedicures in a tranquil environment for the perfect finishing touch.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>🧖 Wellness Rituals</h3>
+                <p>Comprehensive wellness packages combining multiple treatments for total relaxation, inspired by ancient Egyptian wellness traditions.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>🏋️ Fitness Center</h3>
+                <p>State-of-the-art fitness facilities to maintain your workout routine during your stay.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Facilities Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="text-center">Spa Facilities</h2>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🧖‍♀️ Relaxation Lounge</h3>
+                <p>Unwind before and after your treatment in our peaceful relaxation area with traditional Egyptian herbal teas.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>🚿 Private Suites</h3>
+                <p>Luxurious treatment rooms designed for your comfort and privacy, featuring Egyptian-inspired decor.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>♨️ Steam & Sauna</h3>
+                <p>Complimentary access to our steam room and sauna facilities, perfect for detoxification.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Booking Section -->
+<section class="section section-dark">
+    <div class="container text-center">
+        <h2>Book Your Spa Experience</h2>
+        <p>Advance booking is recommended to ensure availability</p>
+        <div class="mt-4">
+            <p><strong>Dial '0'</strong> from your room or visit the Spa on the Mezzanine Floor</p>
+            {% if settings %}
+            <a href="tel:{{ settings.phone_number|cut:' ' }}" class="btn btn-white mt-2">Call: {{ settings.phone_number }}</a>
+            {% else %}
+            <a href="tel:+20227950000" class="btn btn-white mt-2">Call: +20 2 2795 0000</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

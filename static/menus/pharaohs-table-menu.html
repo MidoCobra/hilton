@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharaoh's Table - Menu | Ramses Hilton Hotel</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #d4af37;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .menu-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(26, 26, 46, 0.95);
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+            padding: 3rem;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 1px solid #d4af37;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+        }
+        .header p {
+            color: #888;
+            font-style: italic;
+        }
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        .section h2 {
+            color: #d4af37;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dotted #333;
+        }
+        .item-name {
+            color: #fff;
+            font-weight: bold;
+        }
+        .item-desc {
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+        .item-price {
+            color: #d4af37;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #d4af37;
+            color: #888;
+            font-size: 0.85rem;
+        }
+        .currency { font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <div class="header">
+            <h1>🏺 Pharaoh's Table</h1>
+            <p>Authentic Egyptian Cuisine</p>
+            <p style="margin-top: 1rem; color: #666;">Ramses Hilton Hotel, Cairo</p>
+        </div>
+
+        <div class="section">
+            <h2>Appetizers - المقبلات</h2>
+            <div class="item">
+                <div>
+                    <div class="item-name">Egyptian Mezze Platter</div>
+                    <div class="item-desc">Hummus, baba ganoush, tahini, falafel, stuffed vine leaves</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 285</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Ful Medames</div>
+                    <div class="item-desc">Traditional slow-cooked fava beans with olive oil and spices</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 145</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Molokhia Soup</div>
+                    <div class="item-desc">Classic Egyptian jute leaf soup with garlic and coriander</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 165</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Main Courses - الأطباق الرئيسية</h2>
+            <div class="item">
+                <div>
+                    <div class="item-name">Grilled Kofta Kebab</div>
+                    <div class="item-desc">Minced lamb with herbs, served with rice and grilled vegetables</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 385</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Egyptian Lamb Tagine</div>
+                    <div class="item-desc">Slow-cooked lamb with apricots, almonds, and aromatic spices</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 425</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Sayadeya Fish</div>
+                    <div class="item-desc">Nile perch with caramelized onion rice and tahini sauce</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 395</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Koshari Royal</div>
+                    <div class="item-desc">Egypt's national dish with premium toppings and crispy onions</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 185</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Desserts - الحلويات</h2>
+            <div class="item">
+                <div>
+                    <div class="item-name">Om Ali</div>
+                    <div class="item-desc">Traditional Egyptian bread pudding with nuts and cream</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 145</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Konafa</div>
+                    <div class="item-desc">Crispy pastry with cream cheese, pistachios, and rose syrup</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 165</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Basbousa</div>
+                    <div class="item-desc">Semolina cake soaked in sweet syrup with almonds</div>
+                </div>
+                <div class="item-price"><span class="currency">EGP</span> 125</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>All prices include taxes and service charges</p>
+            <p style="margin-top: 0.5rem;">For reservations: pharaohs.table@ramses.hotel</p>
+            <p style="margin-top: 1rem;">🌟 Open Daily: 6:00 PM - 11:00 PM 🌟</p>
+        </div>
+    </div>
+</body>
+</html>

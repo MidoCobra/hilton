@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Hilton Honors Benefits - Ramses Hilton Hotel{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <h1>Hilton Honors Benefits</h1>
+    <p>Unlock exclusive rewards and experiences</p>
+</section>
+
+<!-- Benefits Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="text-center">Why Join Hilton Honors?</h2>
+        <p class="text-center">Earn points for every stay and redeem them for free nights, experiences, and more</p>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-number">1</div>
+                <h4>Get instant value</h4>
+                <p>Join and earn 3,000 Bonus Points on your first 3 stays, and use perks like Choose Your Room on our app.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-number">2</div>
+                <h4>Earn every day</h4>
+                <p>Rack up Points (and free nights!) with our Hilton Honors credit cards and partners like local Egyptian businesses.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-number">3</div>
+                <h4>Redeem your way</h4>
+                <p>With our Points & Money slider, you choose how many Points to use. Did we mention no blackout dates?</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-number">4</div>
+                <h4>Dream big</h4>
+                <p>Your Points can take you places! Access exclusive experiences and unparalleled luxury stays.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Member Tiers Section -->
+<section class="section section-light">
+    <div class="container">
+        <h2 class="text-center">Member Tiers</h2>
+        <p class="text-center">The more you stay, the more you earn</p>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🏨 Member</h3>
+                <p>Starting tier with great benefits including:</p>
+                <ul>
+                    <li>Free Wi-Fi</li>
+                    <li>Digital Key</li>
+                    <li>2nd Guest Free</li>
+                    <li>Member Discount</li>
+                </ul>
+            </div>
+            
+            <div class="info-card">
+                <h3>⭐ Silver</h3>
+                <p>After 4 stays or 10 nights:</p>
+                <ul>
+                    <li>All Member benefits</li>
+                    <li>5th Night Free</li>
+                    <li>20% Bonus Points</li>
+                    <li>Priority Check-in</li>
+                </ul>
+            </div>
+            
+            <div class="info-card">
+                <h3>🌟 Gold</h3>
+                <p>After 20 stays or 40 nights:</p>
+                <ul>
+                    <li>All Silver benefits</li>
+                    <li>80% Bonus Points</li>
+                    <li>Room Upgrades</li>
+                    <li>Late Check-out</li>
+                </ul>
+            </div>
+            
+            <div class="info-card">
+                <h3>💎 Diamond</h3>
+                <p>After 30 stays or 60 nights:</p>
+                <ul>
+                    <li>All Gold benefits</li>
+                    <li>100% Bonus Points</li>
+                    <li>Executive Lounge Access</li>
+                    <li>48-Hour Room Guarantee</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Points Usage Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="text-center">Ways to Use Your Points</h2>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🛏️ Free Nights</h3>
+                <p>Redeem points for free night stays at any of our 7,000+ hotels worldwide, including Ramses Hilton.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>✈️ Experiences</h3>
+                <p>Use points for unique experiences, including Nile River cruises and Egyptian cultural tours.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>🎁 Shop & Share</h3>
+                <p>Convert points to gift cards, charitable donations, or transfer to friends and family.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section section-dark">
+    <div class="container text-center">
+        <h2>Join Hilton Honors Today</h2>
+        <p>It's free to join and easy to start earning rewards</p>
+        <div class="mt-4">
+            {% if settings %}
+            <a href="{{ settings.hilton_honors_url }}" target="_blank" rel="noopener" class="btn btn-white">Learn More</a>
+            <a href="{{ settings.hilton_honors_join_url }}" target="_blank" rel="noopener" class="btn btn-outline" style="border-color: white; color: white; margin-left: 1rem;">Join Now</a>
+            {% else %}
+            <a href="https://www.hilton.com/en/hilton-honors/member-benefits/" target="_blank" rel="noopener" class="btn btn-white">Learn More</a>
+            <a href="https://www.hilton.com/en/hilton-honors/join/" target="_blank" rel="noopener" class="btn btn-outline" style="border-color: white; color: white; margin-left: 1rem;">Join Now</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

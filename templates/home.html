@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Welcome Letter - Ramses Hilton Hotel{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<!-- <section class="hero" style="background-image: url('https://static.wixstatic.com/media/4b96f7_d91b888c21ff46e0a294d8ebd216065d~mv2.jpg/v1/fill/w_1470,h_944,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/4b96f7_d91b888c21ff46e0a294d8ebd216065d~mv2.jpg');"> -->
+<section class="hero" style="background-image: url('{% static 'images/2024-05-09.webp' %}');">
+    <div class="hero-content">
+        <h1>Welcome Letter</h1>
+        <p>Your Guide to Ramses Hilton Hotel in Cairo</p>
+    </div>
+</section>
+
+<!-- Welcome Letter Section -->
+<section class="section">
+    <div class="welcome-letter">
+        <h2>Welcome Letter</h2>
+        
+        <p>Dear Guest,</p>
+        
+        <p>We are delighted to welcome you to Ramses Hilton Hotel in the heart of Cairo. Whether you are here for business or leisure, our dedicated team is ready to make your stay truly exceptional.</p>
+        
+        <p>Following our recent renovations, we are pleased to share that our Nile View Café has reopened in the lobby, offering an exquisite selection of Egyptian and international delicacies. In addition, our signature restaurants, including the renowned Pharaoh's Table and Nile Terrace, are ready to welcome you with their refreshed menus, crafted to bring you authentic Egyptian flavors and culinary experiences.</p>
+        
+        <p>We are also excited to introduce our rooftop Al-Azhar Lounge, where guests can enjoy traditional Egyptian shisha and cocktails while taking in panoramic views of the Nile River and the historic Citadel.</p>
+        
+        <p>From our prime location overlooking the Nile to our diverse dining venues, wellness facilities, and personalized services, everything has been designed with your comfort in mind. Should you need any assistance before or during your stay, please do not hesitate to reach out to our team — we are here for you every step of the way.</p>
+        
+        <p>We look forward to creating memorable moments with you.</p>
+        
+        <div class="signature-block">
+            <div class="manager-photo">
+                <img src="{% static 'images/tamer-elghamry.jpg' %}" alt="Tamer Elghamry - General Manager">
+            </div>
+            <div class="signature">
+                <p class="signature-name">Tamer Elghamry</p>
+                <p class="signature-title">General Manager</p>
+                <p class="signature-title">Ramses Hilton Hotel, Cairo</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Guide Section -->
+<section class="section section-light">
+    <div class="container">
+        <h2 class="text-center">Your Guide to Our Hotel</h2>
+        <p class="text-center">Discover everything our property has to offer</p>
+        
+        <div class="info-grid">
+            <a href="{% url 'transfers' %}" class="info-card">
+                <h3>🚗 Airport Transfers</h3>
+                <p>Cairo International Airport transfers, valet service, and complimentary parking options for all guests.</p>
+            </a>
+            
+            <a href="{% url 'info' %}" class="info-card">
+                <h3>ℹ️ Important Information</h3>
+                <p>Check-in, check-out times, concierge services, housekeeping, and in-room dining.</p>
+            </a>
+            
+            <a href="{% url 'restaurants' %}" class="info-card">
+                <h3>🍽️ Restaurants & Bars</h3>
+                <p>Experience authentic Egyptian cuisine and international flavors at our dining venues.</p>
+            </a>
+            
+            <a href="{% url 'kids' %}" class="info-card">
+                <h3>👨‍👩‍👧‍👦 Kids & Family</h3>
+                <p>Fun for the little ones and entertainment for the whole family in Cairo.</p>
+            </a>
+            
+            <a href="{% url 'spa' %}" class="info-card">
+                <h3>💆 The Spa</h3>
+                <p>Surrender yourself to the hands of our skilled team for an unforgettable wellness experience.</p>
+            </a>
+            
+            <a href="{% url 'board_menus' %}" class="info-card">
+                <h3>📋 Half & Full Board</h3>
+                <p>Enjoy our board packages with daily breakfast and your choice of traditional Egyptian meals.</p>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

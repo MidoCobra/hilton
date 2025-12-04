@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Important Information - Ramses Hilton Hotel{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <h1>Important Information</h1>
+    <p>Everything you need to know for a smooth and enjoyable stay in Cairo</p>
+</section>
+
+<!-- Check-in/Check-out Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="text-center">Arrival & Departure</h2>
+        <p class="text-center">Our Front Desk Team is here to welcome you and ensure a smooth process</p>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>⏰ Check-in Time</h3>
+                <p><strong>3:00 PM</strong></p>
+                <p>Early check-in is subject to availability. Please contact us in advance if you require an early arrival.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>🚪 Check-out Time</h3>
+                <p><strong>12:00 PM (Noon)</strong></p>
+                <p>Late check-out is subject to availability and may incur additional charges.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>💳 Payment Information</h3>
+                <p>To facilitate a smooth check-in, please present the credit or debit card used to secure your booking.</p>
+                <p>If this card will not be available, kindly inform us in advance so we can assist with alternative payment arrangements.</p>
+            </div>
+        </div>
+        
+        <div class="info-card mt-4" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+            <h4>Please Note:</h4>
+            <p>In the absence of the original card, payment may be processed on another card at check-in, with the initial charge subsequently refunded.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="section section-light">
+    <div class="container">
+        <h2 class="text-center">Hotel Services</h2>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🛎️ Concierge Services</h3>
+                <p>Let our Concierge Team guide you to the best of Cairo — from the Pyramids of Giza and Khan El Khalili bazaar to cultural experiences and Nile River cruises.</p>
+                <p><strong>Dial '0'</strong> or visit the Front Desk</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>🧹 Housekeeping</h3>
+                <p>Daily housekeeping and additional amenities are available upon request.</p>
+                <p><strong>Dial '8'</strong> to contact our Housekeeping Team</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>🍽️ In-Room Dining</h3>
+                <p>Enjoy a variety of Egyptian and international dishes from the comfort of your room.</p>
+                <p><strong>Dial '3'</strong> to place an order</p>
+                {% if room_dining_link %}
+                <a href="{{ room_dining_link.url }}" target="_blank" rel="noopener" class="btn btn-outline mt-2">View Menu</a>
+                {% else %}
+                <a href="https://drive.google.com/file/d/1uB6EanehPuN--i62bb61oybIVDMDvjXB/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-outline mt-2">View Menu</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Reference Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="text-center">Quick Reference</h2>
+        
+        <div class="pricing-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>How to Reach</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Front Desk / Reception</td>
+                        <td>Dial '0'</td>
+                    </tr>
+                    <tr>
+                        <td>Concierge</td>
+                        <td>Dial '0'</td>
+                    </tr>
+                    <tr>
+                        <td>Housekeeping</td>
+                        <td>Dial '8'</td>
+                    </tr>
+                    <tr>
+                        <td>In-Room Dining</td>
+                        <td>Dial '3'</td>
+                    </tr>
+                    <tr>
+                        <td>Spa Reservations</td>
+                        <td>Dial '0' or visit Mezzanine Floor</td>
+                    </tr>
+                    <tr>
+                        <td>Restaurant Reservations</td>
+                        <td>{% if settings %}{{ settings.phone_number }}{% else %}+20 2 2795 0000{% endif %}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="text-center mt-4">
+            <p>For any other inquiries, our team is available 24/7 to assist you.</p>
+            {% if settings %}
+            <a href="https://wa.me/{{ settings.whatsapp_number|cut:' '|cut:'+' }}" target="_blank" rel="noopener" class="btn btn-primary">WhatsApp Us</a>
+            {% else %}
+            <a href="https://wa.me/201234567890" target="_blank" rel="noopener" class="btn btn-primary">WhatsApp Us</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}
