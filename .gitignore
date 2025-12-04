@@ -170,3 +170,9 @@ keys.json
 local_settings.py
 settings_local.py
 development.py
+
+
+# Files containing sensitive data/keys
+.env
+*.pub
+pharaohs_nexus
