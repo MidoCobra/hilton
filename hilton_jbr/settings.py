@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-rd#7&)1%6q9pro6-65uea4d9hy(iu2o1u613la%0lv8gh2sg_#'
+SECRET_KEY = config('SECRET_KEY', default='django-insecure-change-me')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS: comma separated list in .env, e.g. ALLOWED_HOSTS=127.0.0.1,localhost,yourdomain.com
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='', cast=Csv())
 
 
 # Application definition
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -82,6 +85,27 @@ DATABASES = {
 }
 
 
+# Database = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'ramses_hilton_db',
+#         'USER': 'your_db_user',
+#         'PASSWORD': 'sTronng@100$mido', 
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.environ.get('DB_NAME', 'myapp_db'),
+#         'USER': os.environ.get('DB_USER', 'myapp_user'),
+#         'PASSWORD': os.environ.get('DB_PASSWORD', 'secure_password'),
+#         'HOST': os.environ.get('DB_HOST', 'localhost'),
+#         'PORT': os.environ.get('DB_PORT', '5432'),
+#     }
+# }
+
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
@@ -116,13 +140,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = config('STATIC_ROOT', default=BASE_DIR / 'staticfiles')  # collectstatic target for production
+STATICFILES_STORAGE = config('STATICFILES_STORAGE', default='whitenoise.storage.CompressedManifestStaticFilesStorage')
 
 # Media files (User uploaded content)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/#serving-uploaded-files-in-development
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = config('MEDIA_ROOT', default=BASE_DIR / 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -134,3 +160,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Must be set BEFORE any migrations that reference the User model
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+# Production security tweaks
+if not DEBUG:
+    # Honor the `X-Forwarded-Proto` header for request.is_secure()
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    # Use secure cookies
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    # Redirect all non-HTTPS to HTTPS
+    SECURE_SSL_REDIRECT = config('SECURE_SSL_REDIRECT', default=True, cast=bool)
