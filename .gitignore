@@ -176,3 +176,9 @@ development.py
 .env
 *.pub
 pharaohs_nexus
+
+documentation/
+docs/
+documents/
+*.logs
+logs/
