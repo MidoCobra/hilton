@@ -27,10 +27,7 @@
     <header class="header">
         <div class="header-container">
             <a href="{% url 'home' %}" class="logo">
-                <div class="logo-text">
-                    Ramses Hilton
-                    <span>Cairo, Egypt</span>
-                </div>
+                <img src="{% static 'images/logo/0000384281-005.png' %}" alt="Ramses Hilton Hotel Logo" class="logo-image">
             </a>
             
             <!-- Mobile Menu Toggle -->
@@ -44,12 +41,12 @@
             <nav class="nav-menu">
                 <ul>
                     <li><a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Welcome</a></li>
-                    <li><a href="{% url 'transfers' %}" class="{% if request.resolver_match.url_name == 'transfers' %}active{% endif %}">Transfers</a></li>
                     <li><a href="{% url 'info' %}" class="{% if request.resolver_match.url_name == 'info' %}active{% endif %}">Info</a></li>
                     <li><a href="{% url 'restaurants' %}" class="{% if request.resolver_match.url_name == 'restaurants' %}active{% endif %}">Dining</a></li>
-                    <li><a href="{% url 'kids' %}" class="{% if request.resolver_match.url_name == 'kids' %}active{% endif %}">Kids & Family</a></li>
-                    <li><a href="{% url 'spa' %}" class="{% if request.resolver_match.url_name == 'spa' %}active{% endif %}">The Spa</a></li>
-                    <li><a href="{% url 'board_menus' %}" class="{% if request.resolver_match.url_name == 'board_menus' %}active{% endif %}">Board Menus</a></li>
+                    <li><a href="{% url 'transfers' %}" class="{% if request.resolver_match.url_name == 'transfers' %}active{% endif %}">Transfers</a></li>
+                    <!-- <li><a href="{% url 'kids' %}" class="{% if request.resolver_match.url_name == 'kids' %}active{% endif %}">Kids & Family</a></li> -->
+                    <!-- <li><a href="{% url 'spa' %}" class="{% if request.resolver_match.url_name == 'spa' %}active{% endif %}">The Spa</a></li> -->
+                    <!-- <li><a href="{% url 'board_menus' %}" class="{% if request.resolver_match.url_name == 'board_menus' %}active{% endif %}">Board Menus</a></li> -->
                     <li><a href="{% url 'hilton_honors' %}" class="{% if request.resolver_match.url_name == 'hilton_honors' %}active{% endif %}">Hilton Honors</a></li>
                 </ul>
             </nav>
@@ -135,9 +132,9 @@
             <div class="footer-nav">
                 <h4>Experiences</h4>
                 <ul>
-                    <li><a href="{% url 'kids' %}">Kids & Family</a></li>
+                    <!-- <li><a href="{% url 'kids' %}">Kids & Family</a></li>
                     <li><a href="{% url 'spa' %}">The Spa</a></li>
-                    <li><a href="{% url 'board_menus' %}">Board Menus</a></li>
+                    <li><a href="{% url 'board_menus' %}">Board Menus</a></li> -->
                     <li><a href="{% url 'hilton_honors' %}">Hilton Honors</a></li>
                 </ul>
             </div>
@@ -161,6 +158,7 @@
         
         <div class="footer-bottom container">
             <p>&copy; {% now "Y" %} Ramses Hilton Hotel, Cairo. All rights reserved.</p>
+            <p>Designed &amp; developed by <a href="https://pharaohsnexus.com" target="_blank" rel="noopener noreferrer" title="Pharaohs Nexus — design and development">Pharaohs Nexus</a></p>
         </div>
     </footer>
 

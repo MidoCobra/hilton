@@ -75,8 +75,13 @@
                                 {% endif %}
                             </div>
                             
-                            <!-- Menu Button (right side) -->
-                            {% if restaurant.menu_link %}
+                            <!-- Menu Button (right side) - Show PDF or URL -->
+                            {% if restaurant.menu_pdf %}
+                            <a href="{{ restaurant.menu_pdf.url }}" target="_blank" rel="noopener" class="btn btn-primary btn-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                                Menu
+                            </a>
+                            {% elif restaurant.menu_link %}
                             <a href="{{ restaurant.menu_link.url }}" target="_blank" rel="noopener" class="btn btn-primary btn-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                                 Menu

@@ -32,11 +32,11 @@
         
         <div class="signature-block">
             <div class="manager-photo">
-                <img src="{% static 'images/tamer-elghamry.jpg' %}" alt="Tamer Elghamry - General Manager">
+                <img src="{% static 'images/2024-05-09.webp' %}" alt="ٌRamses Hilton Hotel Logo" class="manager-image">
             </div>
             <div class="signature">
-                <p class="signature-name">Tamer Elghamry</p>
-                <p class="signature-title">General Manager</p>
+                <p class="signature-name">Management Team</p>
+                <!-- <p class="signature-title">General Manager</p> -->
                 <p class="signature-title">Ramses Hilton Hotel, Cairo</p>
             </div>
         </div>
@@ -50,10 +50,6 @@
         <p class="text-center">Discover everything our property has to offer</p>
         
         <div class="info-grid">
-            <a href="{% url 'transfers' %}" class="info-card">
-                <h3>🚗 Airport Transfers</h3>
-                <p>Cairo International Airport transfers, valet service, and complimentary parking options for all guests.</p>
-            </a>
             
             <a href="{% url 'info' %}" class="info-card">
                 <h3>ℹ️ Important Information</h3>
@@ -64,21 +60,25 @@
                 <h3>🍽️ Restaurants & Bars</h3>
                 <p>Experience authentic Egyptian cuisine and international flavors at our dining venues.</p>
             </a>
-            
-            <a href="{% url 'kids' %}" class="info-card">
-                <h3>👨‍👩‍👧‍👦 Kids & Family</h3>
-                <p>Fun for the little ones and entertainment for the whole family in Cairo.</p>
+            <a href="{% url 'transfers' %}" class="info-card">
+                <h3>🚗 Airport Transfers</h3>
+                <p>Cairo International Airport transfers, valet service, and complimentary parking options for all guests.</p>
             </a>
             
+            <!-- <a href="{% url 'kids' %}" class="info-card">
+                <h3>👨‍👩‍👧‍👦 Kids & Family</h3>
+                <p>Fun for the little ones and entertainment for the whole family in Cairo.</p>
+            </a> -->
+<!--             
             <a href="{% url 'spa' %}" class="info-card">
                 <h3>💆 The Spa</h3>
                 <p>Surrender yourself to the hands of our skilled team for an unforgettable wellness experience.</p>
-            </a>
+            </a> -->
             
-            <a href="{% url 'board_menus' %}" class="info-card">
+            <!-- <a href="{% url 'board_menus' %}" class="info-card">
                 <h3>📋 Half & Full Board</h3>
                 <p>Enjoy our board packages with daily breakfast and your choice of traditional Egyptian meals.</p>
-            </a>
+            </a> -->
         </div>
     </div>
 </section>

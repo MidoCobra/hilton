@@ -105,13 +105,16 @@
                         <td>In-Room Dining</td>
                         <td>Dial '3'</td>
                     </tr>
-                    <tr>
-                        <td>Spa Reservations</td>
-                        <td>Dial '0' or visit Mezzanine Floor</td>
-                    </tr>
+
                     <tr>
                         <td>Restaurant Reservations</td>
-                        <td>{% if settings %}{{ settings.phone_number }}{% else %}+20 2 2795 0000{% endif %}</td>
+                        <td>
+                            {% if settings %}
+                                <a href="tel:{{ settings.phone_number|cut:' ' }}">{{ settings.phone_number }}</a>
+                            {% else %}
+                                <a href="tel:+20227950000">+20 2 2795 0000</a>
+                            {% endif %}
+                        </td>
                     </tr>
                 </tbody>
             </table>

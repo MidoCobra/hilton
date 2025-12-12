@@ -6,10 +6,10 @@ class ExternalLink(models.Model):
     
     CATEGORY_CHOICES = [
         ('restaurant', 'Restaurant Menu'),
-        ('spa', 'Spa Menu'),
+        # ('spa', 'Spa Menu'),
         ('room_dining', 'In-Room Dining'),
         ('transfer', 'Transfer Service'),
-        ('board_menu', 'Board Menu'),
+        # ('board_menu', 'Board Menu'),
         ('info', 'Info Page Link'),
         ('other', 'Other'),
     ]
@@ -47,6 +47,7 @@ class Restaurant(models.Model):
         blank=True,
         related_name='restaurants'
     )
+    menu_pdf = models.FileField(upload_to='restaurants/menus/', blank=True, null=True, help_text="Upload restaurant menu PDF")
     
     # Social Media Links
     facebook_url = models.URLField(max_length=500, blank=True, help_text="Facebook page URL")

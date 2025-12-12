@@ -46,7 +46,7 @@ python manage.py collectstatic --noinput
 
 ```bash
 # run gunicorn (example)
-gunicorn hilton_jbr.wsgi:application --bind 127.0.0.1:8000 --workers 3
+gunicorn hilton_ramses.wsgi:application --bind 127.0.0.1:8000 --workers 3
 ```
 
 6. Configure Nginx for static/media and reverse proxy

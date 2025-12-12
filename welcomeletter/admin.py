@@ -25,7 +25,7 @@ class RestaurantAdmin(admin.ModelAdmin):
             'fields': ('name', 'slug', 'description', 'image_url', 'image')
         }),
         ('Links & Media', {
-            'fields': ('menu_link', 'facebook_url', 'instagram_url', 'tiktok_url')
+            'fields': ('menu_link','menu_pdf', 'facebook_url', 'instagram_url', 'tiktok_url')
         }),
         ('Contact & Location', {
             'fields': ('email', 'opening_hours', 'location')
