@@ -29,6 +29,14 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 # ALLOWED_HOSTS: comma separated list in .env, e.g. ALLOWED_HOSTS=127.0.0.1,localhost,yourdomain.com
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='', cast=Csv())
 
+Production = config('Production', default=False, cast=bool)
+Development = config('Development', default=True, cast=bool)
+DB_NAME = config('DB_NAME', default=BASE_DIR / 'db.sqlite3')
+DB_USER = config('DB_USER', default='')
+DB_PASSWORD = config('DB_PASSWORD', default='')
+DB_HOST = config('DB_HOST', default='')
+DB_PORT = config('DB_PORT', default='')
+
 
 # Application definition
 
@@ -77,13 +85,33 @@ WSGI_APPLICATION = 'hilton_ramses.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if Development:
+    DB_NAME = BASE_DIR / 'db.sqlite3'
+    DB_USER = ''
+    DB_PASSWORD = ''
+    DB_HOST = ''
+    DB_PORT = ''
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': DB_NAME,
+            'USER': DB_USER,
+            'PASSWORD': DB_PASSWORD,
+            'HOST': DB_HOST,
+            'PORT': DB_PORT,
+        }
     }
-}
-
+elif Production:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': DB_NAME,
+            'USER': DB_USER,
+            'PASSWORD': DB_PASSWORD,
+            'HOST': DB_HOST,
+            'PORT': DB_PORT,
+        }
+    }
 
 # Database = {
 #     'default': {
