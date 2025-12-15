@@ -42,6 +42,18 @@ chown -R deployer:deployer /var/www/hilton/staticfiles /var/www/hilton/media
 python manage.py collectstatic --noinput
 ```
 
+10. Generate site QR (optional)
+
+```bash
+# install the QR library (already listed in requirements)
+pip install -r requirements.txt
+
+# generate an SVG QR for your site and save to static/images/
+python manage.py generate_qr --url https://ramseshilton.com
+
+# the file will be at static/images/ramseshilton_qr.svg and can be included in templates
+```
+
 5. Configure Gunicorn
 
 ```bash
