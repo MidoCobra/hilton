@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramses Hilton - QR Table Cards</title>
+    <style>
+        /* ===================================
+           Ramses Hilton QR Table Cards
+           Small cards for table tents / displays
+           Prints 4 cards per A4 page
+           =================================== */
+        
+        @page {
+            size: A4 portrait;
+            margin: 10mm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #002F61;
+            --secondary-color: #007293;
+            --accent-color: #06937E;
+            --white: #ffffff;
+            --light-bg: #f8f9fa;
+        }
+        
+        @font-face {
+            font-family: 'Hilton Serif';
+            src: url('../fonts/HiltonSerif-Regular.otf') format('opentype');
+            font-weight: normal;
+        }
+        
+        @font-face {
+            font-family: 'Hilton Sans';
+            src: url('../fonts/HiltonSans-Regular.ttf') format('truetype');
+            font-weight: normal;
+        }
+        
+        body {
+            font-family: 'Hilton Sans', 'Segoe UI', Arial, sans-serif;
+            background: #eee;
+            padding: 10mm;
+        }
+        
+        .page-title {
+            text-align: center;
+            font-family: 'Hilton Serif', Georgia, serif;
+            font-size: 14pt;
+            color: var(--primary-color);
+            margin-bottom: 8mm;
+        }
+        
+        .page-title small {
+            display: block;
+            font-size: 10pt;
+            color: #666;
+            font-family: 'Hilton Sans', sans-serif;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8mm;
+            max-width: 190mm;
+            margin: 0 auto;
+        }
+        
+        /* Individual Card */
+        .card {
+            width: 90mm;
+            height: 128mm;
+            background: var(--white);
+            border-radius: 5mm;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 6mm;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2mm 8mm rgba(0,0,0,0.1);
+        }
+        
+        /* Card top accent */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4mm;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 5mm 5mm 0 0;
+        }
+        
+        /* Logo */
+        .card-logo {
+            margin-top: 3mm;
+            margin-bottom: 3mm;
+        }
+        
+        .card-logo img {
+            height: 12mm;
+            width: auto;
+        }
+        
+        .card-hotel-name {
+            font-family: 'Hilton Serif', Georgia, serif;
+            font-size: 9pt;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 4mm;
+        }
+        
+        /* Card heading */
+        .card-heading {
+            text-align: center;
+            margin-bottom: 4mm;
+        }
+        
+        .card-heading h2 {
+            font-family: 'Hilton Serif', Georgia, serif;
+            font-size: 12pt;
+            color: var(--primary-color);
+            font-weight: normal;
+        }
+        
+        .card-heading p {
+            font-size: 8pt;
+            color: var(--secondary-color);
+        }
+        
+        /* QR Container */
+        .card-qr {
+            background: var(--white);
+            padding: 3mm;
+            border: 2px solid var(--secondary-color);
+            border-radius: 3mm;
+            margin-bottom: 4mm;
+        }
+        
+        .card-qr img {
+            width: 42mm;
+            height: 42mm;
+            display: block;
+        }
+        
+        /* Scan text */
+        .card-scan {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 2mm 5mm;
+            border-radius: 2mm;
+            font-size: 8pt;
+            margin-bottom: 3mm;
+        }
+        
+        /* URL */
+        .card-url {
+            font-family: 'Courier New', monospace;
+            font-size: 9pt;
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-bottom: 3mm;
+        }
+        
+        /* Features icons row */
+        .card-features {
+            display: flex;
+            gap: 3mm;
+            font-size: 14pt;
+            margin-bottom: 8mm;
+        }
+        
+        /* Footer */
+        .card-footer {
+            font-size: 6pt;
+            color: #999;
+            margin-top: auto;
+            padding-top: 2mm;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                background: white;
+                padding: 0;
+            }
+            
+            .page-title {
+                display: none;
+            }
+            
+            .cards-grid {
+                gap: 5mm;
+            }
+            
+            .card {
+                box-shadow: none;
+                border: 0.5px solid #ddd;
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Cut guides for print */
+        @media print {
+            .card::after {
+                content: '';
+                position: absolute;
+                top: -3mm;
+                left: -3mm;
+                right: -3mm;
+                bottom: -3mm;
+                border: 0.25px dashed #ccc;
+                pointer-events: none;
+                border-radius: 6mm;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="page-title">
+        Table Cards — Print & Cut
+        <small>4 cards per A4 page • 90mm × 128mm each</small>
+    </h1>
+    
+    <div class="cards-grid">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="card-logo">
+                <img src="../images/logo/0000384281-005.png" alt="Ramses Hilton">
+            </div>
+            <div class="card-hotel-name">Ramses Hilton</div>
+            
+            <div class="card-heading">
+                <h2>Scan for Info</h2>
+                <p>Menus • Services • More</p>
+            </div>
+            
+            <div class="card-qr">
+                <img src="../images/ramseshilton_qr.svg" alt="QR Code">
+            </div>
+            
+            <div class="card-scan">📱 Scan with camera</div>
+            
+            <div class="card-url">ramseshilton.com</div>
+            
+            <div class="card-features">
+                <span>🍽️</span>
+                <span>🚗</span>
+                <span>ℹ️</span>
+                <span>⭐</span>
+            </div>
+            
+            <div class="card-footer">© Ramses Hilton Cairo</div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="card-logo">
+                <img src="../images/logo/0000384281-005.png" alt="Ramses Hilton">
+            </div>
+            <div class="card-hotel-name">Ramses Hilton</div>
+            
+            <div class="card-heading">
+                <h2>Scan for Info</h2>
+                <p>Menus • Services • More</p>
+            </div>
+            
+            <div class="card-qr">
+                <img src="../images/ramseshilton_qr.svg" alt="QR Code">
+            </div>
+            
+            <div class="card-scan">📱 Scan with camera</div>
+            
+            <div class="card-url">ramseshilton.com</div>
+            
+            <div class="card-features">
+                <span>🍽️</span>
+                <span>🚗</span>
+                <span>ℹ️</span>
+                <span>⭐</span>
+            </div>
+            
+            <div class="card-footer">© Ramses Hilton Cairo</div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="card-logo">
+                <img src="../images/logo/0000384281-005.png" alt="Ramses Hilton">
+            </div>
+            <div class="card-hotel-name">Ramses Hilton</div>
+            
+            <div class="card-heading">
+                <h2>Scan for Info</h2>
+                <p>Menus • Services • More</p>
+            </div>
+            
+            <div class="card-qr">
+                <img src="../images/ramseshilton_qr.svg" alt="QR Code">
+            </div>
+            
+            <div class="card-scan">📱 Scan with camera</div>
+            
+            <div class="card-url">ramseshilton.com</div>
+            
+            <div class="card-features">
+                <span>🍽️</span>
+                <span>🚗</span>
+                <span>ℹ️</span>
+                <span>⭐</span>
+            </div>
+            
+            <div class="card-footer">© Ramses Hilton Cairo</div>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="card-logo">
+                <img src="../images/logo/0000384281-005.png" alt="Ramses Hilton">
+            </div>
+            <div class="card-hotel-name">Ramses Hilton</div>
+            
+            <div class="card-heading">
+                <h2>Scan for Info</h2>
+                <p>Menus • Services • More</p>
+            </div>
+            
+            <div class="card-qr">
+                <img src="../images/ramseshilton_qr.svg" alt="QR Code">
+            </div>
+            
+            <div class="card-scan">📱 Scan with camera</div>
+            
+            <div class="card-url">ramseshilton.com</div>
+            
+            <div class="card-features">
+                <span>🍽️</span>
+                <span>🚗</span>
+                <span>ℹ️</span>
+                <span>⭐</span>
+            </div>
+            
+            <div class="card-footer">© Ramses Hilton Cairo</div>
+        </div>
+    </div>
+</body>
+</html>

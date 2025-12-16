@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramses Hilton - Scan for Info | A5 Poster</title>
+    <style>
+        /* ===================================
+           Ramses Hilton QR Poster - A5 Size
+           Compact print-optimized design
+           =================================== */
+        
+        @page {
+            size: A5 portrait;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #002F61;
+            --secondary-color: #007293;
+            --accent-color: #06937E;
+            --white: #ffffff;
+            --light-bg: #f8f9fa;
+        }
+        
+        @font-face {
+            font-family: 'Hilton Serif';
+            src: url('../fonts/HiltonSerif-Regular.otf') format('opentype');
+            font-weight: normal;
+        }
+        
+        @font-face {
+            font-family: 'Hilton Sans';
+            src: url('../fonts/HiltonSans-Regular.ttf') format('truetype');
+            font-weight: normal;
+        }
+        
+        body {
+            font-family: 'Hilton Sans', 'Segoe UI', Arial, sans-serif;
+            background: var(--white);
+            color: var(--primary-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .poster {
+            width: 148mm;
+            min-height: 210mm;
+            background: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10mm 12mm;
+            position: relative;
+            border: 2px solid var(--primary-color);
+        }
+        
+        /* Decorative top accent */
+        .poster::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6mm;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        /* Logo Section */
+        .logo-section {
+            margin-top: 4mm;
+            margin-bottom: 6mm;
+            text-align: center;
+        }
+        
+        .logo-section img {
+            height: 18mm;
+            width: auto;
+        }
+        
+        .hotel-name {
+            font-family: 'Hilton Serif', Georgia, serif;
+            font-size: 11pt;
+            color: var(--primary-color);
+            margin-top: 2mm;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        
+        /* Main Heading */
+        .main-heading {
+            text-align: center;
+            margin-bottom: 5mm;
+        }
+        
+        .main-heading h1 {
+            font-family: 'Hilton Serif', Georgia, serif;
+            font-size: 18pt;
+            color: var(--primary-color);
+            font-weight: normal;
+            margin-bottom: 2mm;
+        }
+        
+        .main-heading p {
+            font-size: 10pt;
+            color: var(--secondary-color);
+            line-height: 1.4;
+        }
+        
+        /* QR Code Container */
+        .qr-container {
+            background: var(--white);
+            padding: 6mm;
+            border: 3px solid var(--secondary-color);
+            border-radius: 4mm;
+            margin-bottom: 6mm;
+        }
+        
+        .qr-container img {
+            width: 55mm;
+            height: 55mm;
+            display: block;
+        }
+        
+        /* Scan instruction */
+        .scan-instruction {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3mm 8mm;
+            border-radius: 3mm;
+            margin-bottom: 6mm;
+            font-size: 11pt;
+            text-align: center;
+        }
+        
+        /* Features List */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3mm;
+            margin-bottom: 6mm;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+            background: var(--light-bg);
+            padding: 2mm 4mm;
+            border-radius: 2mm;
+            font-size: 8pt;
+        }
+        
+        .feature .icon {
+            font-size: 10pt;
+        }
+        
+        /* URL Display */
+        .url-display {
+            text-align: center;
+            padding: 4mm;
+            background: var(--light-bg);
+            border-radius: 3mm;
+            width: 100%;
+        }
+        
+        .url-display p {
+            font-size: 8pt;
+            color: #666;
+            margin-bottom: 1mm;
+        }
+        
+        .url-display .url {
+            font-family: 'Courier New', monospace;
+            font-size: 12pt;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        .poster-footer {
+            position: absolute;
+            bottom: 5mm;
+            text-align: center;
+            font-size: 7pt;
+            color: #666;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .poster {
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <img src="../images/logo/0000384281-005.png" alt="Ramses Hilton Logo">
+            <div class="hotel-name">Ramses Hilton · Cairo</div>
+        </div>
+        
+        <!-- Main Heading -->
+        <div class="main-heading">
+            <h1>Scan for Hotel Info</h1>
+            <p>Access menus, services & more</p>
+        </div>
+        
+        <!-- QR Code -->
+        <div class="qr-container">
+            <img src="../images/ramseshilton_qr.svg" alt="Scan to visit ramseshilton.com">
+        </div>
+        
+        <!-- Scan Instruction -->
+        <div class="scan-instruction">
+            📱 Point your camera here
+        </div>
+        
+        <!-- Features -->
+        <div class="features">
+            <div class="feature">
+                <span class="icon">🍽️</span>
+                <span>Menus</span>
+            </div>
+            <div class="feature">
+                <span class="icon">🚗</span>
+                <span>Transfers</span>
+            </div>
+            <div class="feature">
+                <span class="icon">ℹ️</span>
+                <span>Info</span>
+            </div>
+            <div class="feature">
+                <span class="icon">⭐</span>
+                <span>Rewards</span>
+            </div>
+        </div>
+        
+        <!-- URL Display -->
+        <div class="url-display">
+            <p>Visit directly:</p>
+            <span class="url">ramseshilton.com</span>
+        </div>
+        
+        <!-- Footer -->
+        <div class="poster-footer">
+            © 2025 Ramses Hilton Hotel
+        </div>
+    </div>
+</body>
+</html>

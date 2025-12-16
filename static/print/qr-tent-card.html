@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramses Hilton - QR Tent Card (Foldable)</title>
+    <style>
+        /* ===================================
+           Ramses Hilton QR Tent Card
+           Foldable table tent design
+           Print on thick paper & fold in half
+           =================================== */
+        
+        @page {
+            size: A5 landscape;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #002F61;
+            --secondary-color: #007293;
+            --accent-color: #06937E;
+            --white: #ffffff;
+            --light-bg: #f8f9fa;
+        }
+        
+        @font-face {
+            font-family: 'Hilton Serif';
+            src: url('../fonts/HiltonSerif-Regular.otf') format('opentype');
+        }
+        
+        @font-face {
+            font-family: 'Hilton Sans';
+            src: url('../fonts/HiltonSans-Regular.ttf') format('truetype');
+        }
+        
+        body {
+            font-family: 'Hilton Sans', 'Segoe UI', Arial, sans-serif;
+            background: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 10mm;
+        }
+        
+        .tent-card {
+            width: 210mm;
+            height: 148mm;
+            background: var(--white);
+            display: flex;
+            position: relative;
+            box-shadow: 0 4mm 16mm rgba(0,0,0,0.15);
+        }
+        
+        /* Fold line in center */
+        .tent-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            bottom: 0;
+            border-left: 1px dashed #ccc;
+            z-index: 10;
+        }
+        
+        /* Each side of the tent */
+        .side {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 8mm;
+            position: relative;
+        }
+        
+        /* Front side (right when folded) */
+        .side-front {
+            background: linear-gradient(180deg, var(--white) 0%, var(--light-bg) 100%);
+        }
+        
+        .side-front::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5mm;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        /* Back side (left, will be upside down when folded) */
+        .side-back {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+        
+        /* Logo */
+        .tent-logo img {
+            height: 14mm;
+            width: auto;
+            margin-bottom: 3mm;
+        }
+        
+        .tent-hotel-name {
+            font-family: 'Hilton Serif', Georgia, serif;
+            font-size: 10pt;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 4mm;
+        }
+        
+        /* Heading */
+        .tent-heading h2 {
+            font-family: 'Hilton Serif', Georgia, serif;
+            font-size: 14pt;
+            color: var(--primary-color);
+            font-weight: normal;
+            text-align: center;
+            margin-bottom: 2mm;
+        }
+        
+        .tent-heading p {
+            font-size: 9pt;
+            color: var(--secondary-color);
+            text-align: center;
+        }
+        
+        /* QR */
+        .tent-qr {
+            background: var(--white);
+            padding: 4mm;
+            border: 2px solid var(--secondary-color);
+            border-radius: 3mm;
+            margin: 4mm 0;
+        }
+        
+        .tent-qr img {
+            width: 38mm;
+            height: 38mm;
+            display: block;
+        }
+        
+        /* Scan instruction */
+        .tent-scan {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 2mm 6mm;
+            border-radius: 2mm;
+            font-size: 9pt;
+            margin-bottom: 3mm;
+        }
+        
+        /* URL */
+        .tent-url {
+            font-family: 'Courier New', monospace;
+            font-size: 10pt;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        /* Back side content */
+        .back-content {
+            text-align: center;
+        }
+        
+        .back-content .tent-logo img {
+            filter: brightness(0) invert(1);
+        }
+        
+        .back-content .tent-hotel-name {
+            color: var(--white);
+            font-size: 12pt;
+            margin-bottom: 6mm;
+        }
+        
+        .back-tagline {
+            font-family: 'Hilton Serif', Georgia, serif;
+            font-size: 11pt;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.6;
+            max-width: 80mm;
+        }
+        
+        .back-features {
+            display: flex;
+            gap: 4mm;
+            margin-top: 6mm;
+            font-size: 18pt;
+            justify-content: center;
+        }
+        
+        /* Print instructions */
+        .print-instructions {
+            position: fixed;
+            bottom: 5mm;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 9pt;
+            color: #666;
+            background: #fff;
+            padding: 2mm 5mm;
+            border-radius: 2mm;
+            box-shadow: 0 1mm 4mm rgba(0,0,0,0.1);
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                background: white;
+                padding: 0;
+            }
+            
+            .tent-card {
+                box-shadow: none;
+            }
+            
+            .print-instructions {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="tent-card">
+        <!-- Back Side (will be upside down when printed & folded) -->
+        <div class="side side-back">
+            <div class="back-content">
+                <div class="tent-logo">
+                    <img src="../images/logo/0000384281-005.png" alt="Ramses Hilton">
+                </div>
+                <div class="tent-hotel-name">Ramses Hilton · Cairo</div>
+                
+                <p class="back-tagline">
+                    Your digital concierge awaits.<br>
+                    Scan for instant access to<br>
+                    hotel services & information.
+                </p>
+                
+                <div class="back-features">
+                    <span>🍽️</span>
+                    <span>🚗</span>
+                    <span>ℹ️</span>
+                    <span>⭐</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Front Side (visible when standing) -->
+        <div class="side side-front">
+            <div class="tent-logo">
+                <img src="../images/logo/0000384281-005.png" alt="Ramses Hilton">
+            </div>
+            <div class="tent-hotel-name">Ramses Hilton</div>
+            
+            <div class="tent-heading">
+                <h2>Scan for Info</h2>
+                <p>Menus • Services • More</p>
+            </div>
+            
+            <div class="tent-qr">
+                <img src="../images/ramseshilton_qr.svg" alt="QR Code">
+            </div>
+            
+            <div class="tent-scan">📱 Point camera here</div>
+            
+            <div class="tent-url">ramseshilton.com</div>
+        </div>
+    </div>
+    
+    <div class="print-instructions">
+        📄 Print on thick paper (200gsm+) → Fold along center dashed line → Stand as tent
+    </div>
+</body>
+</html>
