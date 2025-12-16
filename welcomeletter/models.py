@@ -120,7 +120,7 @@ class SiteSettings(models.Model):
     
     # Contact Information
     phone_number = models.CharField(max_length=50, default='+20 2 2795 0000')
-    whatsapp_number = models.CharField(max_length=50, default='+20 10 700 4785')
+    whatsapp_number = models.CharField(max_length=50, default='+20 10 700 4785', verbose_name='Hotline Number')
     email = models.EmailField(default='restaurant.ramses@hilton.com')
     
     # Social Links

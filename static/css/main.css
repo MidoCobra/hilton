@@ -442,6 +442,31 @@ main {
     transition: var(--transition);
 }
 
+/* Utility: clamp text to N lines with a toggle */
+.text-clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.clamp-5 {
+    -webkit-line-clamp: 5;
+    line-height: 1.6; /* ensure consistent calculation */
+}
+.description.expanded {
+    display: block; /* remove clamp */
+    -webkit-line-clamp: unset;
+    overflow: visible;
+}
+.read-more-btn {
+    background: transparent;
+    border: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.4rem 0;
+}
+.read-more-btn:focus { outline: 2px dashed rgba(6, 147, 126, 0.4); }
+
 .info-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);

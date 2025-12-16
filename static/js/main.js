@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     initScrollAnimations();
     initNewsletterForm();
+    initReadMore();
 });
 
 /**
@@ -218,6 +219,53 @@ function showNotification(message, type) {
     `;
     document.head.appendChild(style);
 })();
+
+/**
+ * Read more toggles for clamped descriptions
+ */
+function initReadMore() {
+    const descriptions = document.querySelectorAll('.restaurant-content .description');
+
+    descriptions.forEach(function(desc) {
+        // create read more button
+        const btn = document.createElement('button');
+        btn.className = 'read-more-btn';
+        btn.type = 'button';
+        btn.textContent = 'Read more';
+        btn.setAttribute('aria-expanded', 'false');
+
+        // place after the description
+        desc.insertAdjacentElement('afterend', btn);
+
+        // check if overflowed (content taller than clamped area)
+        function checkOverflow() {
+            const isOverflowing = desc.scrollHeight > desc.clientHeight + 1; // small tolerance
+            btn.style.display = isOverflowing ? 'inline-block' : 'none';
+        }
+
+        // initial check
+        checkOverflow();
+
+        // toggle handler
+        btn.addEventListener('click', function() {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            if (expanded) {
+                desc.classList.remove('expanded');
+                btn.textContent = 'Read more';
+                btn.setAttribute('aria-expanded', 'false');
+                // after collapse, ensure page doesn't jump
+                desc.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else {
+                desc.classList.add('expanded');
+                btn.textContent = 'Show less';
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        });
+
+        // on window resize, re-check
+        window.addEventListener('resize', checkOverflow);
+    });
+}
 
 /**
  * Header scroll behavior

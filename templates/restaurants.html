@@ -32,7 +32,7 @@
                 </div>
                 <div class="restaurant-content">
                     <h3>{{ restaurant.name }}</h3>
-                    <p>{{ restaurant.description }}</p>
+                    <p class="description text-clamp clamp-5">{{ restaurant.description }}</p>
                     
                     <!-- Meta Info Bar (Location & Hours) -->
                     {% if restaurant.location or restaurant.opening_hours %}
@@ -248,10 +248,10 @@
         <div class="mt-4">
             {% if settings %}
             <a href="tel:{{ settings.phone_number|cut:' ' }}" class="btn btn-white">Call: {{ settings.phone_number }}</a>
-            <a href="https://wa.me/{{ settings.whatsapp_number|cut:' '|cut:'+' }}" target="_blank" rel="noopener" class="btn btn-outline" style="border-color: white; color: white; margin-left: 1rem;">WhatsApp</a>
+            <a href="tel:{{ settings.whatsapp_number|cut:' '|cut:'+' }}" target="_blank" rel="noopener" class="btn btn-outline" style="border-color: white; color: white; margin-left: 1rem;">Hotline</a>
             {% else %}
             <a href="tel:+20227950000" class="btn btn-white">Call: +20 2 2795 0000</a>
-            <a href="https://wa.me/201234567890" target="_blank" rel="noopener" class="btn btn-outline" style="border-color: white; color: white; margin-left: 1rem;">WhatsApp</a>
+            <a href="tel:+201234567890" target="_blank" rel="noopener" class="btn btn-outline" style="border-color: white; color: white; margin-left: 1rem;">Hotline</a>
             {% endif %}
         </div>
     </div>

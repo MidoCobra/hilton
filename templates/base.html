@@ -92,11 +92,11 @@
                 <div class="footer-contact">
                     {% if settings %}
                     <p>Call: <a href="tel:{{ settings.phone_number|cut:' ' }}">{{ settings.phone_number }}</a></p>
-                    <p>WhatsApp: <a href="https://wa.me/{{ settings.whatsapp_number|cut:' '|cut:'+' }}">{{ settings.whatsapp_number }}</a></p>
+                    <p>Hotline: <a href="tel:{{ settings.whatsapp_number|cut:' ' }}">{{ settings.whatsapp_number }}</a></p>
                     <p>Email: <a href="mailto:{{ settings.email }}">{{ settings.email }}</a></p>
                     {% else %}
                     <p>Call: <a href="tel:+20227950000">+20 2 2795 0000</a></p>
-                    <p>WhatsApp: <a href="https://wa.me/201234567890">+20 123 456 7890</a></p>
+                    <p>Hotline: <a href="tel:+201234567890">+20 123 456 7890</a></p>
                     <p>Email: <a href="mailto:info@ramseshilton.com">info@ramseshilton.com</a></p>
                     {% endif %}
                 </div>

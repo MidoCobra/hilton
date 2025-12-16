@@ -123,9 +123,9 @@
         <div class="text-center mt-4">
             <p>For any other inquiries, our team is available 24/7 to assist you.</p>
             {% if settings %}
-            <a href="https://wa.me/{{ settings.whatsapp_number|cut:' '|cut:'+' }}" target="_blank" rel="noopener" class="btn btn-primary">WhatsApp Us</a>
+            <a href="tel:{{ settings.whatsapp_number|cut:' '|cut:'+' }}" target="_blank" rel="noopener" class="btn btn-primary">Hotline</a>
             {% else %}
-            <a href="https://wa.me/201234567890" target="_blank" rel="noopener" class="btn btn-primary">WhatsApp Us</a>
+            <a href="tel:+201234567890" target="_blank" rel="noopener" class="btn btn-primary">Hotline</a>
             {% endif %}
         </div>
     </div>
