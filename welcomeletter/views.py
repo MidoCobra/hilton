@@ -31,7 +31,7 @@ def info(request):
     context = get_common_context()
     # Get room dining menu link
     context['room_dining_link'] = ExternalLink.objects.filter(
-        slug='room-dining-menu', is_active=True
+        category='room_dining', is_active=True
     ).first()
     # Get info page specific link
     context['info_link'] = ExternalLink.objects.filter(

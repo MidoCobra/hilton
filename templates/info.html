@@ -65,8 +65,9 @@
                 <h3>🍽️ In-Room Dining</h3>
                 <p>Enjoy a variety of Egyptian and international dishes from the comfort of your room.</p>
                 <p><strong>Dial '2'</strong> to place an order</p>
-          
-                <a href="{{ room_dining_link.pdf }}" target="_blank" rel="noopener" class="btn btn-outline mt-2">View Menu</a>
+                {% if room_dining_link %}
+                <a href="{{ room_dining_link.get_link_url }}" target="_blank" rel="noopener" class="btn btn-outline mt-2">View Menu</a>
+                {% endif %}
             </div>
         </div>
     </div>

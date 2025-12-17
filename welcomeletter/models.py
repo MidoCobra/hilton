@@ -18,7 +18,7 @@ class ExternalLink(models.Model):
     slug = models.SlugField(unique=True, help_text="Unique identifier for template usage")
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default='other')
     url = models.URLField(max_length=500, blank=True, help_text="External URL or PDF link")
-    pdf = models.FileField(upload_to='external_links/', blank=True, null=True, help_text="Upload PDF file (takes priority over URL)")
+    pdf = models.FileField(upload_to='external_links/', blank=True, null=True, help_text="Upload PDF file")
     description = models.TextField(blank=True, help_text="Optional description")
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
