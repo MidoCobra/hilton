@@ -52,13 +52,13 @@
             <div class="info-card">
                 <h3>🛎️ Concierge Services</h3>
                 <p>Let our Concierge Team guide you to the best of Cairo — from the Pyramids of Giza and Khan El Khalili bazaar to cultural experiences and Nile River cruises.</p>
-                <p><strong>Dial '0'</strong> or visit the Front Desk</p>
+                <p><strong>Dial '10'</strong> or visit the Front Desk</p>
             </div>
             
             <div class="info-card">
                 <h3>🧹 Housekeeping</h3>
                 <p>Daily housekeeping and additional amenities are available upon request.</p>
-                <p><strong>Dial '8'</strong> to contact our Housekeeping Team</p>
+                <p><strong>Dial '1'</strong> to contact our Housekeeping Team</p>
             </div>
             
             <div class="info-card">
@@ -66,7 +66,7 @@
                 <p>Enjoy a variety of Egyptian and international dishes from the comfort of your room.</p>
                 <p><strong>Dial '3'</strong> to place an order</p>
                 {% if room_dining_link %}
-                <a href="{{ room_dining_link.get_link_url }}" target="_blank" rel="noopener" class="btn btn-outline mt-2">View Menu</a>
+                <a href="{{ room_dining_link.pdf }}" target="_blank" rel="noopener" class="btn btn-outline mt-2">View Menu</a>
                 {% else %}
                 <a href="https://drive.google.com/file/d/1uB6EanehPuN--i62bb61oybIVDMDvjXB/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-outline mt-2">View Menu</a>
                 {% endif %}
@@ -95,25 +95,22 @@
                     </tr>
                     <tr>
                         <td>Concierge</td>
-                        <td>Dial '0'</td>
+                        <td>Dial '10'</td>
                     </tr>
                     <tr>
                         <td>Housekeeping</td>
-                        <td>Dial '8'</td>
+                        <td>Dial '1'</td>
                     </tr>
                     <tr>
                         <td>In-Room Dining</td>
-                        <td>Dial '3'</td>
+                        <td>Dial '2'</td>
                     </tr>
 
                     <tr>
                         <td>Restaurant Reservations</td>
                         <td>
-                            {% if settings %}
-                                <a href="tel:{{ settings.phone_number|cut:' ' }}">{{ settings.phone_number }}</a>
-                            {% else %}
-                                <a href="tel:+20227950000">+20 2 2795 0000</a>
-                            {% endif %}
+    
+                                <a href="tel:+201012440224">+20 10 12440224</a>
                         </td>
                     </tr>
                 </tbody>
