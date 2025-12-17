@@ -17,7 +17,8 @@ class ExternalLink(models.Model):
     name = models.CharField(max_length=200, help_text="Display name for the link")
     slug = models.SlugField(unique=True, help_text="Unique identifier for template usage")
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default='other')
-    url = models.URLField(max_length=500, help_text="External URL or PDF link")
+    url = models.URLField(max_length=500, blank=True, help_text="External URL or PDF link")
+    pdf = models.FileField(upload_to='external_links/', blank=True, null=True, help_text="Upload PDF file (takes priority over URL)")
     description = models.TextField(blank=True, help_text="Optional description")
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -30,6 +31,12 @@ class ExternalLink(models.Model):
     
     def __str__(self):
         return f"{self.name} ({self.get_category_display()})"
+    
+    def get_link_url(self):
+        """Return PDF url if available, otherwise return external URL"""
+        if self.pdf:
+            return self.pdf.url
+        return self.url
 
 
 class Restaurant(models.Model):

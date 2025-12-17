@@ -24,7 +24,7 @@
             
             <div class="mt-4">
                 {% if spa_menu_link %}
-                <a href="{{ spa_menu_link.url }}" target="_blank" rel="noopener" class="btn btn-primary">View Spa Menu</a>
+                <a href="{{ spa_menu_link.get_link_url }}" target="_blank" rel="noopener" class="btn btn-primary">View Spa Menu</a>
                 {% else %}
                 <a href="https://assets.hiltonstatic.com/hilton-asset-cache/image/upload/v1737566860/dx/wp/dxbjbhi-hilton-dubai-jumeirah/pdf/Dec%202024%20Spa_Booklet%2020x20CM%202024%201%201%20FINAL-ua_qgvsxn.pdf" target="_blank" rel="noopener" class="btn btn-primary">View Spa Menu</a>
                 {% endif %}

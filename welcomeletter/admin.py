@@ -4,11 +4,16 @@ from .models import ExternalLink, Restaurant, TransferOption, MailingListSubscri
 
 @admin.register(ExternalLink)
 class ExternalLinkAdmin(admin.ModelAdmin):
-    list_display = ['name', 'category', 'slug', 'is_active', 'updated_at']
+    list_display = ['name', 'category', 'slug', 'has_pdf', 'is_active', 'updated_at']
     list_filter = ['category', 'is_active']
     search_fields = ['name', 'slug', 'url']
     prepopulated_fields = {'slug': ('name',)}
     ordering = ['category', 'name']
+    
+    def has_pdf(self, obj):
+        return bool(obj.pdf)
+    has_pdf.boolean = True
+    has_pdf.short_description = 'PDF'
 
 
 @admin.register(Restaurant)

@@ -66,7 +66,7 @@
                 <p>Enjoy a variety of Egyptian and international dishes from the comfort of your room.</p>
                 <p><strong>Dial '3'</strong> to place an order</p>
                 {% if room_dining_link %}
-                <a href="{{ room_dining_link.url }}" target="_blank" rel="noopener" class="btn btn-outline mt-2">View Menu</a>
+                <a href="{{ room_dining_link.get_link_url }}" target="_blank" rel="noopener" class="btn btn-outline mt-2">View Menu</a>
                 {% else %}
                 <a href="https://drive.google.com/file/d/1uB6EanehPuN--i62bb61oybIVDMDvjXB/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-outline mt-2">View Menu</a>
                 {% endif %}
