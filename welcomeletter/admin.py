@@ -33,7 +33,6 @@ class RestaurantAdmin(admin.ModelAdmin):
             'fields': ('menu_link','menu_pdf', 'facebook_url', 'instagram_url', 'tiktok_url')
         }),
         ('Contact & Location', {
-            'fields': ('email', 'opening_hours', 'location')
         }),
         ('Settings', {
             'fields': ('is_active', 'order')
