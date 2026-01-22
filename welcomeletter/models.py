@@ -63,6 +63,9 @@ class Restaurant(models.Model):
     
     # Reservation Email
     email = models.EmailField(max_length=254, blank=True, help_text="Reservation email address")
+
+    #reservation website
+    reservation_website = models.URLField(max_length=500, blank=True, help_text="Online reservation website URL")
     
     # Additional Information
     opening_hours = models.CharField(max_length=200, blank=True, help_text="e.g., 12:00 PM - 11:00 PM")

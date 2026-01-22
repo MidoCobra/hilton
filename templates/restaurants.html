@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static i18n %}
 
 {% block title %}Restaurants & Bars - Ramses Hilton Hotel{% endblock %}
 
@@ -93,7 +93,18 @@
                         {% if restaurant.email %}
                         <a href="mailto:{{ restaurant.email }}?subject=Table Reservation at {{ restaurant.name }}" class="btn btn-secondary btn-icon" style="width: 100%; justify-content: center; padding: 0.8rem 1rem;">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                            Reserve Your Table
+                            {% trans "Reserve Your Table" %}
+                        </a>
+                        {% endif %}
+                        {% if restaurant.reservation_website %}
+                        <a href="{{ restaurant.reservation_website }}" target="_blank" rel="noopener" class="btn btn-secondary btn-icon" style="width: 100%; justify-content: center; padding: 0.8rem 1rem;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20"/>
+                                <path d="M12 2a15 15 0 0 0 0 20"/>
+                                <path d="M6 6c2.5 2.5 6.5 2.5 9 0m0 12c-2.5-2.5-6.5-2.5-9 0"/>
+                            </svg>
+                            {% trans "Reserve Your Table" %}
                         </a>
                         {% endif %}
                     </div>
